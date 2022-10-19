@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  font-family:'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 50px;
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+p {
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 3px;
+}
+
+.card__container {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px -1px rgb(0, 0, 0, 0.5);
+}
+
+.card__background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  transition: all 1.1s;
+  filter: brightness(75%);
+}
+
+.card__text {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: absolute;
+  color: aliceblue;
+  width: 100%;
+  height: 100%;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.grid__cards {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1em;
+  min-height: 100vh;
+  margin: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card__banner {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  height: 100%;
+  width: 100%;
 }
+
+.card__hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width: 100%;
+  height: 100%;
+}
+
+.card__subtitle {
+  text-transform: uppercase;
+}
+
+.card__description p {
+  font-size: 10px;
+  font-weight: 100;
+}
+
+
+
+
+
