@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useMemo } from "react"
 
 const Card = ({ isBanner, title, subtitle, description, backgroundImg }) => {
   const [isHovering, setIsHovering] = useState(false)
@@ -11,7 +11,7 @@ const Card = ({ isBanner, title, subtitle, description, backgroundImg }) => {
     setIsHovering(false);
   };
 
-  const showText = () => {
+  const TextContent = useMemo(() => {
     return (
       <>
         <p className="card__subtitle">{subtitle}</p>
@@ -22,26 +22,24 @@ const Card = ({ isBanner, title, subtitle, description, backgroundImg }) => {
         }
       </>
     )
-  }
+  }, [title, subtitle, isBanner])
 
   return (
-    <div className="card__container">
-      <div className="card__background" style={{backgroundImage: `url(${backgroundImg})`}}></div>
-      <div className="card__text">
-        <div
-          className="card__hover"
+    <div className="card">
+      <img src={`${backgroundImg}`} alt='card background' />
+      <div className="card__text" 
           onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+          onMouseLeave={handleMouseLeave}>
           {isHovering ? (
             <>
-              {showText()}
-              <p>{description}</p>
-              <button>View</button>
+              {TextContent}
+              <div className="card__description">
+                <p>{description}</p>
+                <button>Explore More</button>
+              </div>
             </>
-            ) : showText()
+            ) : TextContent
           }
-        </div>
       </div>
     </div>
   )
