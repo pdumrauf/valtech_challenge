@@ -63,12 +63,8 @@ img {
   height: 100%;
 }
 
-.grid__cards {
+.card__grid {
   margin: 100px
-}
-
-.card__description {
-  transition-timing-function: ease 1.1s;
 }
 
 .card__subtitle {
@@ -94,19 +90,25 @@ button {
 }
 
 @media (min-width: 1024px) {
-  .grid__cards {
+  .card__grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 1em;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
     max-width: 70%;
     margin-left: auto;
     margin-right: auto;
-    
   }
-  
-  .card__banner {
-    grid-column-start: 1;
-    grid-column-end: 4;
+
+  .card:first-child {
+    grid-column: span 4;
+  }
+
+  .card:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  .card:last-child {
+    grid-column: span 2;
   }
 
   .card__container {

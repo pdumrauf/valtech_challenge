@@ -17,10 +17,8 @@ const Grid = () => {
 
   return (
     <>
-      <main className="grid__cards">
-        <div className="card__banner">
-          <Card isBanner title="valtech_" subtitle='front-End' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit' backgroundImg={image}/>
-        </div>
+      <main className="card__grid">
+        <Card isBanner title="valtech_" subtitle='front-End' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit' backgroundImg={image}/>
         {
         countries.map(country => (
           <Card key={country.id} title={country.city} subtitle={country.country} description={country.description} backgroundImg={country.imgUrl}/>
