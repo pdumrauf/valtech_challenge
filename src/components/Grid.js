@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
 import Card from './Card'
-import image from '../../src/valtech_logo.jpg'
 
 const Grid = () => {
   const [countries, setCountries] = useState([])
 
   const getData = async () => {
-    const data = await fetch('https://mocki.io/v1/ca9cfae2-cabb-4e52-ae98-955f96eb5702')
+    const data = await fetch('https://mocki.io/v1/b8944a36-3f4a-4ade-a02e-9401bcd50424')
     const countriesRes = await data.json()
     setCountries(countriesRes)
   }
@@ -18,11 +17,23 @@ const Grid = () => {
   return (
     <>
       <main className="card__grid">
-        <Card isBanner title="valtech_" subtitle='front-End' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit' backgroundImg={image}/>
+        <Card 
+          isBanner 
+          title="valtech_" 
+          subtitle='front-End' 
+          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit' 
+          backgroundImg={'/assets/valtech_logo.jpg'}
+        />
         {
-        countries.map(country => (
-          <Card key={country.id} title={country.city} subtitle={country.country} description={country.description} backgroundImg={country.imgUrl}/>
-        ))
+          countries.map(country => (
+            <Card 
+              key={country.id} 
+              title={country.city} 
+              subtitle={country.country} 
+              description={country.description} 
+              backgroundImg={country.imgUrl}
+            />
+          ))
         }
       </main>
       <footer>

@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 80px;
   font-weight: 500;
 }
 
@@ -17,10 +17,9 @@ h2 {
 }
 
 p {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 100;
-  letter-spacing: 3px;
-  text-align: center;
+
 }
 
 footer {
@@ -30,7 +29,7 @@ footer {
 .card__grid {
   display: grid;
   gap: 1.5rem;
-  max-width: 70%;
+  max-width: 90%;
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
@@ -61,11 +60,7 @@ img {
   transform: scale(1.5);
 }
 
-.card__text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.card__content {
   position: absolute;
   color: white;
   width: 100%;
@@ -73,22 +68,53 @@ img {
 }
 
 .card__text {
-  transition: 1s transform ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
+.card__header {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease;
+}
+
+.card__header.-is-hovering {
+  transform: translateY(-80px);
+}
 
 .card__subtitle {
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 15px;
   text-transform: uppercase;
 }
 
 .card__description {
   display: flex;
   flex-direction:column;
+  justify-content: center;
   align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.card__description.-is-hovering {
+  opacity: 1;
 }
 
 .card__description p {
-  padding: 50px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 button {
@@ -102,6 +128,7 @@ button {
 
 @media (min-width: 1024px) {
   .card__grid {
+    max-width: 70%;
     grid-template-columns: repeat(4, 1fr)
   }
 
@@ -109,15 +136,8 @@ button {
     grid-column: span 4;
   }
 
-  .card:nth-child(2) {
+  .card:nth-child(6n+2), .card:nth-child(6n+7) {
     grid-column: span 2;
-  }
-
-  .card:last-child {
-    grid-column: span 2;
-  }
-  .card__description {
-    width: 100%;
   }
 }
 

@@ -11,35 +11,44 @@ const Card = ({ isBanner, title, subtitle, description, backgroundImg }) => {
     setIsHovering(false);
   };
 
+  const hoverClass = useMemo(() => {
+    return isHovering && !isBanner ? '-is-hovering' : ''
+  }, [isHovering, isBanner])
+
   const TextContent = useMemo(() => {
     return (
-      <>
+      <div className={`card__header ${hoverClass}`}>
         <p className="card__subtitle">{subtitle}</p>
         {
-          isBanner
-          ? <h1>{title}</h1> 
+          isBanner ? 
+          <>
+            <h1>{title}</h1>
+            <p>{description}</p> 
+          </>
           : <h2>{title}</h2>
         }
-      </>
+      </div>
     )
-  }, [title, subtitle, isBanner])
+  }, [title, subtitle, description, isBanner, hoverClass])
 
   return (
     <div className="card">
       <img src={`${backgroundImg}`} alt='card background' />
-      <div className="card__text" 
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}>
-          {isHovering ? (
+      <div 
+        className="card__content"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {TextContent}
+        <div className={`card__description ${hoverClass}`}>
+          {
+            !isBanner && 
             <>
-              {TextContent}
-              <div className="card__description">
-                <p>{description}</p>
-                <button>Explore More</button>
-              </div>
+              <p>{description}</p>
+              <button>View More</button>
             </>
-            ) : TextContent
           }
+        </div>
       </div>
     </div>
   )
