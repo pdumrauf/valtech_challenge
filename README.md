@@ -11,7 +11,7 @@
 Challenge for Valtech Talent Program Front-End Developer.
 
 ## Technologies
-* React JS - created with CLI create-react-app
+* React JS - created with CLI create-react-app.
 
 ## Setup
 To run this project, install it locally using npm:
@@ -26,5 +26,6 @@ $ npm start
 * Unit test
 
 ## Extra
-Mock API created with https://mocki.io/ - To change the API, go to components Grid.js in line 8. 
-Current API: https://mocki.io/v1/b8944a36-3f4a-4ade-a02e-9401bcd50424
+* Mock API created with https://mocki.io/ - To change the API, go to components Grid.js in line 8.
+  Current API: https://mocki.io/v1/b8944a36-3f4a-4ade-a02e-9401bcd50424
+* Deployed at Vercel: https://valtech-challenge-pdumrauf.vercel.app/

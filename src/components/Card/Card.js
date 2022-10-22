@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react"
+import './Card.css'
 
 const Card = ({ isBanner, title, subtitle, description, backgroundImg }) => {
   const [isHovering, setIsHovering] = useState(false)

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import Card from './Card'
+import './Grid.css'
+import Card from '../Card/Card.js'
 
 const Grid = () => {
   const [countries, setCountries] = useState([])
@@ -44,48 +45,3 @@ const Grid = () => {
 }
 
 export default Grid
-  
-/*[
-{
-"id": 1,
-"country": "Germany",
-"city": "Berlin",
-"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-"imgUrl": "/assets/berlin.jpg"
-},
-{
-"id": 2,
-"country": "Italy",
-"city": "Venice",
-"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-"imgUrl": "/assets/venice.jpg"
-},
-{
-"id": 3,
-"country": "Netherlands",
-"city": "Amsterdam",
-"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-"imgUrl": "/assets/amsterdam.jpg"
-},
-{
-"id": 4,
-"country": "France",
-"city": "Paris",
-"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-"imgUrl": "/assets/paris.jpg"
-},
-{
-"id": 5,
-"country": "Argentina",
-"city": "Buenos Aires",
-"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-"imgUrl": "/assets/buenosAires.jpg"
-},
-{
-"id": 6,
-"country": "Spain",
-"city": "Barcelona",
-"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-"imgUrl": "/assets/barcelona.jpg"
-}
-]*/
